@@ -34,8 +34,7 @@ class AutoResizeText(QTextEdit):
         width = event_width
         size = self.document().size()
         if self.resizing:
-            if size.height() + 2 < self.size().height():
-                self.setFixedHeight(size.height() + 2)
+            self.setFixedHeight(size.height() + 2)
             return self.document().size().height()
 
         width = self.get_optimal_width(width)
